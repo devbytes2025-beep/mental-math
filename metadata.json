@@ -1,0 +1,6 @@
+{
+  "name": "Mental Math Mastery",
+  "description": "A high-performance mental calculation trainer with real-time feedback, progress tracking, and custom difficulty levels.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
