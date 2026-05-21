@@ -6,12 +6,14 @@
 export type Operation = 'addition' | 'subtraction' | 'multiplication' | 'division';
 export type Difficulty = '1-digit' | '2-digits' | '3-digits' | 'intermediate' | 'advanced';
 export type GameMode = 'input' | 'multiple-choice';
+export type ChallengeType = 'sprint' | 'survival';
 
 export interface GameSettings {
   operation: Operation;
   questionCount: number;
   difficulty: Difficulty;
   mode: GameMode;
+  challengeType: ChallengeType;
 }
 
 export interface Question {
@@ -20,6 +22,7 @@ export interface Question {
   options?: number[];
   userAnswer?: string;
   isCorrect?: boolean;
+  solveTime?: number; // reaction time for this specific question
 }
 
 export interface GameRecord {
@@ -27,8 +30,9 @@ export interface GameRecord {
   questionCount: number;
   difficulty: Difficulty;
   mode: GameMode;
-  bestTime: number; // in seconds
-  lastTime: number;
+  challengeType?: ChallengeType;
+  bestTime: number; // in seconds (for sprint) or high score count (for survival)
+  lastTime: number; // last performance metric
   date: string;
 }
 
